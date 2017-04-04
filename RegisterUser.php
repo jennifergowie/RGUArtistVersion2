@@ -16,12 +16,5 @@ echo("<p> entering registeruser.php</p>");
       VALUES ('".$MatriculationNumber."','".$FirstName."','".$Surname."','".$EmailAddress."','".$Class."','".$Password."','".$ProfilePicure."')";
       $link->query($sql);
     echo ('disconnecting to database');
-
-    echo $MatriculationNumber;
-    echo $FirstName;
-    echo $Surname;
-    echo $EmailAddress;
-    echo $Class;
-    echo $Password;
-    echo $ProfilePicture;
+echo("<p> Leaving registeruser.php</p>");
 ?>
