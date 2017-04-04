@@ -3,18 +3,16 @@
 session_start(); // Start Session
 
 include("dbConnect.php");    //Establish database connection
-echo("<p> entering registeruser.php</p>");
-    $MatriculationNumber=$_POST["MatriculationNumber"];
-    $FirstName =$_POST["FirstName(s)"];
-    $Surname=$_POST["Surname"];
-    $EmailAddress=$_POST["EmailAddress"];
-    $Class=$_POST["Class"];
-    $Password=$_POST["Password"];
-    $ProfilePicture=$_POST["ProfilePicture"];
-    echo ('connecting to database');
-      $sql = "INSERT INTO userprofiles (MatriculationNumber, FirstName, Surname, EmailAddress, Class, Password, ProfilePicture)
-      VALUES ('".$MatriculationNumber."','".$FirstName."','".$Surname."','".$EmailAddress."','".$Class."','".$Password."','".$ProfilePicure."')";
-      $link->query($sql);
-    echo ('disconnecting to database');
-echo("<p> Leaving registeruser.php</p>");
-?>
+
+$username=$_POST["MatriculationNumber"]; //Get username that has been entered
+$emailAddress=$_POST["FirstName"]; //Get email address that has been entered
+$password=$_POST["Surname"]; //Get password that has been entered
+$mobileNumber=$_POST["course"]; //Get mobile number that has been entered
+
+$sql = "INSERT INTO users (MatriculationNumber, FirstName, Surname, Class) VALUES ('".$username."','".$emailAddress."','".$password."', '".$mobileNumber."')";
+$link->query($sql);
+
+echo $username;
+echo $emailAddress;
+echo $password;
+echo $mobileNumber;
